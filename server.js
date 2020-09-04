@@ -8,7 +8,7 @@ const actionsRouter = require('./routes/actions-router')
 const logger = require('./middleware/logger')
 
 
-// server.use(logger())
+server.use(logger)
 server.use(helmet())
 server.use(express.json())
 server.use('/api/projects', projectsRouter)

@@ -1,6 +1,6 @@
-// const logger = (req, res, next) => {
-//     console.log(`${req.method} to ${req.originalUrl}`)
-//     next()
-// }
+function logger(req, res, next) {
+    console.log(`${req.method} to ${req.url}`)
+    next()
+}
 
-// module.exports = logger
+module.exports = logger
