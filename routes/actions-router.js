@@ -35,7 +35,7 @@ router.post('/', validatePost, (req, res) => {
             res.status(201).json({ data: req.body })
         })
         .catch(err => {
-            res.status(500).json({ err: "server error" })
+            res.status(500).json({ success: false, message: err.message })
         })
 })
 
@@ -74,7 +74,7 @@ function validatePost(req, res, next) {
             }
         })
         .catch(err => {
-            res.status(500).json({ err: "server error" })
+            res.status(500).json({ success: false })
         })
 }
 
