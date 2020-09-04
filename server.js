@@ -2,16 +2,16 @@ const express = require('express');
 const server = express();
 
 
-// import routers
-// import helmet
+const projectsRouter = require('./routes/projects-router')
+const actionsRouter = require('./routes/actions-router')
 // import custom logger middleware
 
 // server.use helmet
 // server.use logger
-// server.use express.json()
+server.use(express.json())
+server.use('/api/projects', projectsRouter)
+server.use('/api/actions', actionsRouter)
 
-// server.use(./router, router)
-// for both routers
 
 server.get('/', (req, res) => {
   res.send('server is operational baby')
